@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hai.springboot_ssm.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.hai.springboot_ssm.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+        <result column="role" jdbcType="VARCHAR" property="role" />
+    </resultMap>
+
+    <select id="getUser" resultType="com.hai.springboot_ssm.entity.User">
+        select * from user where id = #{id}
+    </select>
+
+<!--    -->
+    <select id="findUserByRole" resultType="com.hai.springboot_ssm.entity.User">
+        select * from user where role = #{role}
+    </select>
+
+</mapper>
